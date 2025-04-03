@@ -2,3 +2,4 @@ pytesseract
 SpeechRecognition
 flask
 pillow
+gunicorn
