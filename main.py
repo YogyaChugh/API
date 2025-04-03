@@ -6,6 +6,8 @@ from PIL import Image
 
 app = Flask(__name__)
 
+pytesseract.pytesseract.tesseract_cmd = r"tesseract.exe"  # Change for Linux/macOS
+
 @app.route("/upload", methods=["POST"])
 def upload_file():
     if "file" not in request.files:
