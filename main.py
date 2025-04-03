@@ -7,10 +7,8 @@ import os
 
 app = Flask(__name__)
 
-temp = os.path.dirname(__file__)
-temp = os.path.abspath(temp)
-temp = os.path.join(temp,"tesseract.exe")
-pytesseract.pytesseract.tesseract_cmd = temp  # Change for Linux/macOS
+
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract" # Change for Linux/macOS
 
 @app.route("/upload", methods=["POST"])
 def upload_file():
