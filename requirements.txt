@@ -1,0 +1,4 @@
+pytesseract
+SpeechRecognition
+flask
+pillow
