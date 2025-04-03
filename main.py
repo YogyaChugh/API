@@ -3,10 +3,14 @@ import pytesseract
 import speech_recognition as sr
 from flask import Flask, request, jsonify
 from PIL import Image
+import os
 
 app = Flask(__name__)
 
-pytesseract.pytesseract.tesseract_cmd = r"tesseract.exe"  # Change for Linux/macOS
+temp = os.path.dirname(__file__)
+temp = os.path.abspath(temp)
+temp = os.path.join(temp,"tesseract.exe")
+pytesseract.pytesseract.tesseract_cmd = temp  # Change for Linux/macOS
 
 @app.route("/upload", methods=["POST"])
 def upload_file():
